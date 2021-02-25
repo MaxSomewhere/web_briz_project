@@ -1,0 +1,19 @@
+{
+"viewportWidth": 1920,
+"viewportHeight": 1080,
+
+"baseUrl": "https://ottdevfront.briz.ua/",
+"valid_auth_login": "silvanamobla@gmail.com",
+"correct_regauth_password": "12345q",
+"valid_reg_login": "qwert12233@gmail.com",
+
+"invalid_regauth_login": "silvanamoblagmail.com",
+"invalid_regauth_login2": "silvanamobla@gmailcom",
+"incorrect_auth_login": "si453463obla@gmail.com",
+"existing_reg_login": "gusionmobla@gmail.com",
+
+"incorrect_auth_password": "12345f",
+"invalid_regauth_password": "12345",
+"invalid_regauth_password2": "123456"
+
+}
