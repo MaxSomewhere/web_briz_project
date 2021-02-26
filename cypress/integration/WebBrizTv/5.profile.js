@@ -3,12 +3,12 @@ const { get } = require("http")
 describe ("{Profile", () => {
     beforeEach(() =>  {
         cy.viewport(1920, 1080)
+        cy.visit(data.baseUrl)
     })
 
     it ("Профиль",() => {
         cy.fixture('webBrizTv').then(data => {
-            cy.visit(data.baseUrl)
-
+            
             cy.log('Авторизация с корректными данными')
             cy.get('a[href="/auth/login"]').click()
             cy.get('input[name="login"]').clear().type(data.valid_auth_login)
