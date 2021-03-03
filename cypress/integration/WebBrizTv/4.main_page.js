@@ -1,5 +1,5 @@
-const { Loginform } = require("../../support/Pages/Authauto")
-const { mainpage } = require("../../support/Pages/Main_page")
+const { Loginform } = require("../../pageobjects/Authauto")
+const { mainpage } = require("../../pageobjects/Main_page")
 
 const { get } = require("http")
 

@@ -1,6 +1,6 @@
 const { get } = require("http")
 //import { Authauto } from "../../support/Pages/Authauto"
-const { Loginform } = require("../../support/Pages/Authauto")
+const { Loginform } = require("../../pageobjects/Authauto")
 
 //comment
 describe ("Profile", () => {
