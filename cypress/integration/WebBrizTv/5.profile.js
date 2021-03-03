@@ -1,7 +1,7 @@
 const { get } = require("http")
 //import { Authauto } from "../../support/Pages/Authauto"
 const { Loginform } = require("../../pageobjects/Authauto")
-
+const { Profile } = require("../../pageobjects/Profile")
 //comment
 describe ("Profile", () => {
     beforeEach(() =>  {
@@ -23,24 +23,17 @@ describe ("Profile", () => {
             
             cy.log('Проверка наличия элементов на странице')
             cy.get('div[class="ProfileMenu__name"]').should('exist')
-            cy.get('div[class="ProfileMenu__name"]').should('exist')
-
+            
             cy.log('Редактирование профиля с невалидным Email')
-            cy.get('input[name="name"]').clear().type('Max')
-            cy.get('input[name="email"]').clear().type(data.invalid_regauth_login)
-            cy.get('button[type="submit"]').click()
+            Profile.EditEmail(data.invalid_regauth_login)
             cy.get('span[class="i-m-error"]').should('exist')
 
             cy.log('Редактирование профиля с невалидным Email')
-            cy.get('input[name="name"]').clear().type('Max')
-            cy.get('input[name="email"]').clear().type(data.invalid_regauth_login2)
-            cy.get('button[type="submit"]').click()
+            Profile.EditEmail(data.invalid_regauth_login2)
             cy.get('span[class="i-m-error"]').should('exist')
 
             cy.log('Редактирование профиля с зарегестрированным Email')
-            cy.get('input[name="name"]').clear().type('Max')
-            cy.get('input[name="email"]').clear().type(data.existing_reg_login)
-            cy.get('button[type="submit"]').click()
+            Profile.EditEmail(data.existing_reg_login)
             cy.get('div[class="Toastify__toast Toastify__toast--error"]').should('exist')
 
             cy.log('Поля выбора даты')
