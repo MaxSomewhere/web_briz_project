@@ -1,8 +1,7 @@
 const { get } = require("http")
-//import { Authauto } from "../../support/Pages/Authauto"
 const { Loginform } = require("../../pageobjects/Authauto")
 const { Profile } = require("../../pageobjects/Profile")
-//comment
+
 describe ("Profile", () => {
     beforeEach(() =>  {
         cy.viewport(1920, 1080)
