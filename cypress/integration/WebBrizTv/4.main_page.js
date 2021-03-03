@@ -1,3 +1,6 @@
+const { Loginform } = require("../../support/Pages/Authauto")
+const { mainpage } = require("../../support/Pages/Main_page")
+
 const { get } = require("http")
 
 describe ("Main Page", () => {
@@ -10,12 +13,8 @@ describe ("Main Page", () => {
             cy.visit(data.baseUrl)
 
             cy.log('Авторизация с корректными данными')
-            cy.get('a[href="/auth/login"]').click()
-            cy.get('input[name="login"]').clear().type(data.valid_auth_login)
-            cy.get('input[name="password"]').clear().type(data.correct_regauth_password)
-            cy.get('button[type="submit"]').click()
-            cy.get('div[class="Toastify__toast Toastify__toast--success"]')
-                .should('exist')
+            Loginform.correctlogin(data.valid_auth_login, data.correct_regauth_password)
+            
             
             cy.log('Слайдер')
             cy.get('button[class="MainBanner__arrow MainBanner__arrow--right"]').should('exist').click()
@@ -27,67 +26,27 @@ describe ("Main Page", () => {
 
 
             cy.log('Популярные телеканалы')
-            cy.get('main').find('section').eq(1).find('div').find('div').find('div[class="CardsSlider__button-group"]').find('button').eq(1).should('exist').click()
-            cy.get('main').find('section').eq(1).find('div').find('div').find('div[class="CardsSlider__button-group"]').find('button').eq(0).should('exist').click()
-            cy.get('main').find('section').eq(1).find('div').find('div').find('div[class="react-multi-carousel-list CardsSlider__slider "]').find('ul').find('li').eq(0).click()
-            .wait(1000)
-            cy.get('a[class="HeaderLogo"]').click()
-
+                mainpage.CardsSlider(1)
 
             cy.log('Премьеры-главная')
-            cy.get('main').find('section').eq(2).find('div').find('div').find('div[class="CardsSlider__button-group"]').find('button').eq(1).should('exist').click()
-            cy.get('main').find('section').eq(2).find('div').find('div').find('div[class="CardsSlider__button-group"]').find('button').eq(0).should('exist').click()
-            cy.get('main').find('section').eq(2).find('div').find('div').find('div[class="react-multi-carousel-list CardsSlider__slider "]').find('ul').find('li').eq(0).click()
-            .wait(1000)
-            cy.get('a[class="HeaderLogo"]').click()
-            cy.get('main').find('section').eq(2).find('div').find('h2').find('a[class="show-all-btn"]').click().wait(1000)
-            cy.get('a[class="HeaderLogo"]').click()
-            cy.get('main').find('section').eq(2).find('div').find('h2').find('a').eq(0).click().wait(1000)
-            cy.get('a[class="HeaderLogo"]').click()
+                mainpage.CardsSlider(2)
+                mainpage.OpenCategory(2)
 
 
             cy.log('Фильмы-главная')
-            cy.get('main').find('section').eq(3).find('div').find('div').find('div[class="CardsSlider__button-group"]').find('button').eq(1).should('exist').click()
-            cy.get('main').find('section').eq(3).find('div').find('div').find('div[class="CardsSlider__button-group"]').find('button').eq(0).should('exist').click()
-            cy.get('main').find('section').eq(3).find('div').find('div').find('div[class="react-multi-carousel-list CardsSlider__slider "]').find('ul').find('li').eq(0).click()
-            .wait(1000)
-            cy.get('a[class="HeaderLogo"]').click()
-            cy.get('main').find('section').eq(3).find('div').find('h2').find('a[class="show-all-btn"]').click().wait(1000)
-            cy.get('a[class="HeaderLogo"]').click()
-            cy.get('main').find('section').eq(3).find('div').find('h2').find('a').eq(0).click().wait(1000)
-            cy.get('a[class="HeaderLogo"]').click()
-
+                mainpage.CardsSlider(3)
+                mainpage.OpenCategory(3)
 
             cy.log('Сериалы-главная')
-            cy.get('main').find('section').eq(4).find('div').find('div').find('div[class="CardsSlider__button-group"]').find('button').eq(1).should('exist').click()
-            cy.get('main').find('section').eq(4).find('div').find('div').find('div[class="CardsSlider__button-group"]').find('button').eq(0).should('exist').click()
-            cy.get('main').find('section').eq(4).find('div').find('div').find('div[class="react-multi-carousel-list CardsSlider__slider "]').find('ul').find('li').eq(0).click()
-            .wait(1000)
-            cy.get('a[class="HeaderLogo"]').click()
-            cy.get('main').find('section').eq(4).find('div').find('h2').find('a[class="show-all-btn"]').click().wait(1000)
-            cy.get('a[class="HeaderLogo"]').click()
-            cy.get('main').find('section').eq(4).find('div').find('h2').find('a').eq(0).click().wait(1000)
-            cy.get('a[class="HeaderLogo"]').click()
-
+                mainpage.CardsSlider(4)
+                mainpage.OpenCategory(4)
 
             cy.log('Мультфильмы-главная')
-            cy.get('main').find('section').eq(5).find('div').find('div').find('div[class="CardsSlider__button-group"]').find('button').eq(1).should('exist').click()
-            cy.get('main').find('section').eq(5).find('div').find('div').find('div[class="CardsSlider__button-group"]').find('button').eq(0).should('exist').click()
-            cy.get('main').find('section').eq(5).find('div').find('div').find('div[class="react-multi-carousel-list CardsSlider__slider "]').find('ul').find('li').eq(0).click()
-            .wait(1000)
-            cy.get('a[class="HeaderLogo"]').click()
-            cy.get('main').find('section').eq(5).find('div').find('h2').find('a[class="show-all-btn"]').click().wait(1000)
-            cy.get('a[class="HeaderLogo"]').click()
-            cy.get('main').find('section').eq(5).find('div').find('h2').find('a').eq(0).click().wait(1000)
-            cy.get('a[class="HeaderLogo"]').click()
-
+                mainpage.CardsSlider(5)
+                mainpage.OpenCategory(5)
 
             cy.log('Вам понравится')
-            cy.get('main').find('section').eq(6).find('div').find('div').find('div[class="CardsSlider__button-group"]').find('button').eq(1).should('exist').click()
-            cy.get('main').find('section').eq(6).find('div').find('div').find('div[class="CardsSlider__button-group"]').find('button').eq(0).should('exist').click()
-            cy.get('main').find('section').eq(6).find('div').find('div').find('div[class="react-multi-carousel-list CardsSlider__slider "]').find('ul').find('li').eq(0).click()
-            .wait(1000)
-            cy.get('a[class="HeaderLogo"]').click()
+                mainpage.CardsSlider(6)
 
         })
     })

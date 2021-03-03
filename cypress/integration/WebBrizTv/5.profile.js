@@ -1,5 +1,7 @@
 const { get } = require("http")
-const { Authauto } = require("../../support/Pages/Authauto")
+//import { Authauto } from "../../support/Pages/Authauto"
+const { Loginform } = require("../../support/Pages/Authauto")
+
 //comment
 describe ("Profile", () => {
     beforeEach(() =>  {
@@ -10,8 +12,11 @@ describe ("Profile", () => {
     it ("Профиль",() => {
         cy.fixture('webBrizTv').then(data => {
             cy.visit(data.baseUrl)
-            Authauto.
-
+            
+            cy.log('Авторизация с корректными данными')
+            Loginform.correctlogin(data.valid_auth_login, data.correct_regauth_password)
+            cy.get('div[class="Toastify__toast Toastify__toast--success"]')
+                .should('exist')
             
             //cy.contains('Увійти').trigger('mouseover').click()
             cy.visit('https://ottdevfront.briz.ua/profile')
