@@ -13,7 +13,7 @@ describe ("Main Page", () => {
             cy.visit(data.baseUrl)
 
             cy.log('Авторизация с корректными данными')
-            Loginform.correctlogin(data.valid_auth_login, data.correct_regauth_password)
+                Loginform.correctlogin(data.valid_auth_login, data.correct_regauth_password)
             
             
             cy.log('Слайдер')
