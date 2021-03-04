@@ -1,4 +1,4 @@
-const { Loginform } = require("../../support/Pages/Authauto")
+const { Loginform } = require("../../../support/pages/AuthRegForm")
 
 describe ("Log in", () => {
     beforeEach(() =>  {

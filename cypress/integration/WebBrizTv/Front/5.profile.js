@@ -1,6 +1,6 @@
 const { get } = require("http")
-const { Loginform } = require("../../pageobjects/Authauto")
-const { Profile } = require("../../pageobjects/Profile")
+const { Loginform } = require("../../../support/pages/AuthRegForm")
+const { Profile } = require("../../../support/pages/Profile")
 
 describe ("Profile", () => {
     beforeEach(() =>  {
