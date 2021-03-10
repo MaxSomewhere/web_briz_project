@@ -15,6 +15,11 @@ export class mainpageactions {
         cy.get('a[class="HeaderLogo"]').click()
     }
 
+    Slider(num) {
+        cy.get(num).should('exist').click()
+    }
+
+
 }
 
 export const mainpage = new mainpageactions()

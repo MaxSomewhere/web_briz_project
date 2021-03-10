@@ -18,10 +18,11 @@ describe ("Main Page", () => {
             cy.log('Слайдер')
             cy.get('button[class="MainBanner__arrow MainBanner__arrow--right"]').should('exist').click()
             cy.get('button[class="MainBanner__arrow MainBanner__arrow--left"]').should('exist').click()
-            cy.get('button[aria-label="Go to slide 1"]').should('exist').click()
-            cy.get('button[aria-label="Go to slide 2"]').should('exist').click()
-            cy.get('button[aria-label="Go to slide 3"]').should('exist').click()
-            cy.get('button[aria-label="Go to slide 4"]').should('exist').click()
+                mainpage.Slider('button[aria-label="Go to slide 1"]')
+                mainpage.Slider('button[aria-label="Go to slide 2"]')
+                mainpage.Slider('button[aria-label="Go to slide 3"]')
+                mainpage.Slider('button[aria-label="Go to slide 4"]')
+            
 
 
             cy.log('Популярные телеканалы')
