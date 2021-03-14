@@ -1,8 +1,4 @@
-<<<<<<< HEAD:cypress/integration/WebBrizTv/3.passRecovery_form.js
 const { Loginform } = require("../../pages/Authauto")
-=======
-const { Loginform } = require("../../../support/pages/AuthRegForm")
->>>>>>> 5fad2e85c9e30cda03a6c23c690a2d1a845d105c:cypress/integration/WebBrizTv/Front/3.passRecovery_form.js
 
 describe ("Recovery Password", () => {
     beforeEach(() =>  {

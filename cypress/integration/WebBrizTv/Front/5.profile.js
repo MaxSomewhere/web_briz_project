@@ -1,11 +1,6 @@
 const { get } = require("http")
-<<<<<<< HEAD:cypress/integration/WebBrizTv/5.profile.js
 const { Loginform } = require("../../pages/Authauto")
 const { Profile } = require("../../pages/Profile")
-=======
-const { Loginform } = require("../../../support/pages/AuthRegForm")
-const { Profile } = require("../../../support/pages/Profile")
->>>>>>> 5fad2e85c9e30cda03a6c23c690a2d1a845d105c:cypress/integration/WebBrizTv/Front/5.profile.js
 
 describe ("Profile", () => {
     beforeEach(() =>  {

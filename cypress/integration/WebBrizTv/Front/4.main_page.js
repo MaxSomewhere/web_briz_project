@@ -1,10 +1,5 @@
-<<<<<<< HEAD:cypress/integration/WebBrizTv/4.main_page.js
 const { Loginform } = require("../../pages/Authauto")
 const { mainpage } = require("../../pages/Main_page")
-=======
-const { Loginform } = require("../../../support/pages/AuthRegForm")
-const { mainpage } = require("../../../support/pages/MainPage")
->>>>>>> 5fad2e85c9e30cda03a6c23c690a2d1a845d105c:cypress/integration/WebBrizTv/Front/4.main_page.js
 const { get } = require("http")
 
 describe ("Main Page", () => {
