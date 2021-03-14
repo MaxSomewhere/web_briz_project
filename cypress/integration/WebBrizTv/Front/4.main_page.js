@@ -1,5 +1,10 @@
+<<<<<<< HEAD:cypress/integration/WebBrizTv/4.main_page.js
 const { Loginform } = require("../../pages/Authauto")
 const { mainpage } = require("../../pages/Main_page")
+=======
+const { Loginform } = require("../../../support/pages/AuthRegForm")
+const { mainpage } = require("../../../support/pages/MainPage")
+>>>>>>> 5fad2e85c9e30cda03a6c23c690a2d1a845d105c:cypress/integration/WebBrizTv/Front/4.main_page.js
 const { get } = require("http")
 
 describe ("Main Page", () => {
@@ -18,10 +23,11 @@ describe ("Main Page", () => {
             cy.log('Слайдер')
             cy.get('button[class="MainBanner__arrow MainBanner__arrow--right"]').should('exist').click()
             cy.get('button[class="MainBanner__arrow MainBanner__arrow--left"]').should('exist').click()
-            cy.get('button[aria-label="Go to slide 1"]').should('exist').click()
-            cy.get('button[aria-label="Go to slide 2"]').should('exist').click()
-            cy.get('button[aria-label="Go to slide 3"]').should('exist').click()
-            cy.get('button[aria-label="Go to slide 4"]').should('exist').click()
+                mainpage.Slider('button[aria-label="Go to slide 1"]')
+                mainpage.Slider('button[aria-label="Go to slide 2"]')
+                mainpage.Slider('button[aria-label="Go to slide 3"]')
+                mainpage.Slider('button[aria-label="Go to slide 4"]')
+            
 
 
             cy.log('Популярные телеканалы')
