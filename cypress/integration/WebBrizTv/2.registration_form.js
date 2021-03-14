@@ -1,4 +1,4 @@
-const { Loginform } = require("../../pageobjects/Authauto")
+const { Loginform } = require("../../pages/Authauto")
 
 describe ("Registrtion", () => {
     beforeEach(() =>  {
