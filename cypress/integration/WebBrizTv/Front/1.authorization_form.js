@@ -1,3 +1,5 @@
+const { Loginform } = require("../../pages/Authauto")
+
 describe ("Log in", () => {
     beforeEach(() =>  {
         cy.viewport(1920, 1080)
@@ -9,30 +11,22 @@ describe ("Log in", () => {
             cy.get('a[href="/auth/login"]').click()
             
             cy.log('Авторизация с некорректным Email(без@)')
-            cy.get('input[name="login"]').type(data.invalid_regauth_login)
-            cy.get('input[name="password"]').type(data.correct_regauth_password)
-            cy.get('button[type="submit"]').click()
+            Loginform.dologin(data.invalid_regauth_login, data.correct_regauth_password)
             cy.get('span[class="i-m-error"]')
                 .should('exist')
       
             cy.log('Авторизация с некорректным Email(без точки)')
-            cy.get('input[name="login"]').clear().type(data.invalid_regauth_login2)
-            cy.get('input[name="password"]').clear().type(data.correct_regauth_password)
-            cy.get('button[type="submit"]').click()
+            Loginform.dologin(data.invalid_regauth_login2, data.correct_regauth_password)
             cy.get('span[class="i-m-error"]')
                 .should('exist')
 
             cy.log('Авторизация с некорректным паролем')
-            cy.get('input[name="login"]').clear().type(data.valid_auth_login)
-            cy.get('input[name="password"]').clear().type(data.incorrect_auth_password)
-            cy.get('button[type="submit"]').click()
+            Loginform.dologin(data.valid_auth_login, data.incorrect_auth_password)
             cy.get('span[class="i-m-error"]')
                 .should('exist')
 
             cy.log('Авторизация с корректными данными')
-            cy.get('input[name="login"]').clear().type(data.valid_auth_login)
-            cy.get('input[name="password"]').clear().type(data.correct_regauth_password)
-            cy.get('button[type="submit"]').click()
+            Loginform.dologin(data.valid_auth_login, data.correct_regauth_password)
             cy.get('div[class="Toastify__toast Toastify__toast--success"]')
                 .should('exist')
         })
