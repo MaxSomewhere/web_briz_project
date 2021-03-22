@@ -1,5 +1,5 @@
-const { Loginform } = require("../../pages/Authauto")
-const { mainpage } = require("../../pages/Main_page")
+const { Loginform } = require("../../../pages/Authauto")
+const { mainpage } = require("../../../pages/Main_page")
 const { get } = require("http")
 
 describe ("Main Page", () => {

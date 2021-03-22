@@ -1,4 +1,4 @@
-const { Loginform } = require("../../pages/Authauto")
+const { Loginform } = require("../../../pages/Authauto")
 
 describe ("Recovery Password", () => {
     beforeEach(() =>  {
