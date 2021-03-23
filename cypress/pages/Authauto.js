@@ -1,6 +1,6 @@
 export class AuthLoginform {
 
-    correctlogin(login, password) {
+    correctLogin(login, password) {
             cy.get('a[href="/auth/login"]').click()
             cy.get('input[name="login"]').clear().type(login)
             cy.get('input[name="password"]').clear().type(password)
@@ -9,24 +9,24 @@ export class AuthLoginform {
                 .should('exist')
         
     }
-    dologin(login, password) {
+    doLogin(login, password) {
             cy.get('input[name="login"]').clear().type(login)
             cy.get('input[name="password"]').clear().type(password)
             cy.get('button[type="submit"]').click()    
     }
 
-    doreg(login, password) {
+    doReg(login, password) {
             cy.get('input[name="login"]').clear().type(login)
             cy.get('input[name="password"]').clear().type(password)
             cy.get('button[type="submit"]').click() 
     }
 
-    dorecovery(login) {
+    doRecovery(login) {
             cy.get('input[name="login"]').clear().type(login)
             cy.get('button[type="submit"]').click()
     }
 
 }
 
-export const Loginform = new AuthLoginform()
+export const loginForm = new AuthLoginform()
 

@@ -1,4 +1,4 @@
-const { Loginform } = require("../../../pages/Authauto")
+const { loginForm } = require("../../../pages/Authauto")
 
 describe ("Profile", () => {
     beforeEach(() =>  {
@@ -11,7 +11,7 @@ describe ("Profile", () => {
             cy.visit(data.baseUrl)
             
             cy.log('Авторизация с корректными данными')
-            Loginform.correctlogin(data.valid_auth_login, data.correct_regauth_password)
+            loginForm.correctLogin(data.valid_auth_login, data.correct_regauth_password)
             cy.get('div[class="Toastify__toast Toastify__toast--success"]')
                 .should('exist')
 

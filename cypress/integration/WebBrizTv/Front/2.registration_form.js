@@ -1,4 +1,4 @@
-const { Loginform } = require("../../../pages/Authauto")
+const { loginForm } = require("../../../pages/Authauto")
 
 describe ("Registrtion", () => {
     beforeEach(() =>  {
@@ -12,32 +12,32 @@ describe ("Registrtion", () => {
             cy.get('a[class="reg-link"]').click()
             
             cy.log('Регистрация с некорректным Email(без@)')
-            Loginform.doreg(data.invalid_regauth_login, data.correct_regauth_password)
+            loginForm.doReg(data.invalid_regauth_login, data.correct_regauth_password)
             cy.get('span[class="i-m-error"]')
                 .should('exist')
       
             cy.log('Регистрация с некорректным Email(без точки)')
-            Loginform.doreg(data.invalid_regauth_login2, data.correct_regauth_password)
+            loginForm.doReg(data.invalid_regauth_login2, data.correct_regauth_password)
             cy.get('span[class="i-m-error"]')
                 .should('exist')
 
             cy.log('Регистрация с невалидным паролем(5 символов)')
-            Loginform.doreg(data.valid_reg_login, data.invalid_regauth_password)
+            loginForm.doReg(data.valid_reg_login, data.invalid_regauth_password)
             cy.get('span[class="i-m-error"]')
                 .should('exist')
 
             cy.log('Регистрация с невалидным паролем(6 цифр без букв)')
-            Loginform.doreg(data.valid_reg_login, data.invalid_regauth_password2)
+            loginForm.doReg(data.valid_reg_login, data.invalid_regauth_password2)
             cy.get('span[class="i-m-error"]')
                 .should('exist')
 
             cy.log('Регистрация с данными существующего пользователя')
-            Loginform.doreg(data.existing_reg_login, data.correct_regauth_password)
+            loginForm.doReg(data.existing_reg_login, data.correct_regauth_password)
             cy.get('span[class="i-m-error"]')
                 .should('exist')
 
             cy.log('Регистрация с корректными данными')
-            Loginform.doreg(data.valid_reg_login, data.correct_regauth_password)
+            loginForm.doReg(data.valid_reg_login, data.correct_regauth_password)
             cy.get('div[class="Toastify__toast Toastify__toast--info"]')
                 .should('exist')
         })

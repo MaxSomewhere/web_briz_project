@@ -1,6 +1,6 @@
-export class mainpageactions {
+export class mainPageActions {
 
-    CardsSlider(num) {
+    cardsSlider(num) {
         cy.get('main').find('section').eq(num).find('div').find('div').find('div[class="CardsSlider__button-group"]').find('button').eq(1).should('exist').click()
         cy.get('main').find('section').eq(num).find('div').find('div').find('div[class="CardsSlider__button-group"]').find('button').eq(0).should('exist').click()
         cy.get('main').find('section').eq(num).find('div').find('div').find('div[class="react-multi-carousel-list CardsSlider__slider "]').find('ul').find('li').eq(0).click()
@@ -8,7 +8,7 @@ export class mainpageactions {
         cy.get('a[class="HeaderLogo"]').click()
     }
 
-    OpenCategory(num) {
+    openCategory(num) {
         cy.get('main').find('section').eq(num).find('div').find('h2').find('a[class="show-all-btn"]').click().wait(1000)
         cy.get('a[class="HeaderLogo"]').click()
         cy.get('main').find('section').eq(num).find('div').find('h2').find('a').eq(0).click().wait(1000)
@@ -22,4 +22,4 @@ export class mainpageactions {
 
 }
 
-export const mainpage = new mainpageactions()
+export const mainPage = new mainPageActions()
