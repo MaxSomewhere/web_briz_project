@@ -1,3 +1,9 @@
 {
-    "baseUrl": "http://dbilling.briz.ua/Ru/#/"
+    "baseUrl": "http://dbilling.briz.ua/Ru/#/", 
+    "godUser": "raven@breezein.net",
+    "logisticsUser":"sliva@breezein.net",
+    "logisticsManager":"madcat600@breezein.net",
+    "logisticsApprover":"maksymlitvinov9510@gmail.com",
+    "logisticsAccManager":"maksymlitvinov9510@gmail.com",
+    "dbillingPass":"123123"
 }
