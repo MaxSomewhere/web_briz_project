@@ -1,0 +1,26 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^6.8.0",
+    "cypress-downloadfile": "^1.2.0"
+  },
+  "devDependencies": {
+    "cypress-file-upload": "^5.0.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaxSomewhere/web_briz_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaxSomewhere/web_briz_project/issues"
+  },
+  "homepage": "https://github.com/MaxSomewhere/web_briz_project#readme"
+}
