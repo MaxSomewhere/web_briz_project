@@ -1,6 +1,7 @@
 const { DevBillLog } = require("../../../pages/DBillingLogin")
 
 
+
 describe ("Order manage", () => {
     beforeEach(() =>  {
         cy.viewport(1920, 1080)
@@ -17,11 +18,11 @@ describe ("Order manage", () => {
                 cy.get(':nth-child(2) > .el-col-xs-6 > .hidden-xs-only').click()
                 cy.get('.el-col-md-6 > .el-input > .el-input__inner').clear().type('3400')
 
-                cy.fixture('testimage9.jpeg').then((fileContent) => {
+                cy.fixture('testimage9.jpg').then(fileContent => {
                     cy.get('.el-upload > .el-input > .el-input__inner')
                     .attachFile(
-                        { fileContent, mimeType: 'image/jpeg' },
-                        { subjectType: 'input', force: true }
+                        { fileContent, mimeType: 'image/jpg' },
+                        // { subjectType: 'input', force: true }
                       )
                 
                 })
