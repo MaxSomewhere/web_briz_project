@@ -1,7 +1,7 @@
 const { DevBillLog } = require("../../../pages/DBillingLogin")
 const { goToLogistics } = require("../../../pages/DBillingNavigation")
 
-describe ("Order manage", () => {
+describe ("Order approve", () => {
     beforeEach(() =>  {
         cy.viewport(1920, 1080)
     })
@@ -27,8 +27,8 @@ describe ("Order manage", () => {
                 cy.get(buttonCancelOrder2).click()
                 cy.get(buttonApproveOrder3).click()
 
-                cy.contains('Сохранить').click()
-                cy.get(buttonCloseOrder).should('be.visible').click()
+                cy.contains('Сохранить').click().wait(6000)
+                // cy.get(buttonCloseOrder).should('be.visible').click()
 
 
         })
